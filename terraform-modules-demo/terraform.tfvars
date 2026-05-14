@@ -1,3 +1,3 @@
-ami_id = "ami-053b0d53c279acc90"
+ami_id = "ami-091138d0f0d41ff90"
 instance = "t2.micro"
-subnet = "subnet-019ea91ed9b5252e7"
+subnet = "subnet-03aee7663d6cc3214"
