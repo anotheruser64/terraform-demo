@@ -8,14 +8,14 @@ resource "aws_key_pair" "aws-key" {
 }
 
 resource "aws_vpc" "vpc-creation" {
-  cidr_block = var.cidr
+  cidr_block = var.cidr_vpc
 }
 
 resource "aws_subnet" "subnet-creation" {
   vpc_id = aws_vpc.vpc-creation.id
-  cidr_block = var.cidr
+  cidr_block = var.cidr_subnet
   availability_zone = "us-east-1a"
-  map_public_ip_on_launch = "true"
+  map_public_ip_on_launch = true
 }
 
 resource "aws_internet_gateway" "internet-gateway-creation" {
@@ -56,7 +56,7 @@ resource "aws_security_group" "web-sg-creation" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+ 
   egress {
     description = "Allow all outbound traffic"
     from_port = 0
@@ -98,9 +98,8 @@ resource "aws_instance" "ec2-creation" {
     "echo 'Hello this is ec3 instance' ",
     "sudo apt update -y",
     "sudo apt install python3-pip -y",
-    "cd /home/ubuntu",
     "sudo pip3 install flask --break-system-packages",
-    "sudo python3 app.py",
+    "sudo python3 /home/ubuntu/app.py",
   ]
 }
 }
