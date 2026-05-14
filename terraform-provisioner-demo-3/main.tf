@@ -95,7 +95,7 @@ resource "aws_instance" "ec2-creation" {
 
   provisioner "remote-exec" {
   inline = [
-    "echo 'Hello this is ec3 instance' "
+    "echo 'Hello this is ec3 instance' ",
     "sudo apt update -y",
     "sudo apt install python3-pip -y",
     "cd /home/ubuntu",
