@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "aws-s3-bucket" {
-  bucket = "terraform-modules-demo-2-bucket"
+  bucket = var.bucket_name
 }

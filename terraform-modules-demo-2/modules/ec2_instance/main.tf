@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2" {
-  ami = "ami-091138d0f0d41ff90"
-  instance_type = "t2.micro"
-  subnet_id = "subnet-03aee7663d6cc3214"
+  ami = var.ami-instance
+  instance_type = var.instance-type-aws
+  subnet_id = var.subnet-aws
 }
