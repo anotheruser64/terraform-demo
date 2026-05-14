@@ -15,5 +15,5 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
 }
 
 resource "aws_s3_bucket" "aws_s3_creation" {
-  bucket = "my-terraform-state-bucket"
+  bucket = "aws-anotheruser-my-terraform-state-bucket"
 }
