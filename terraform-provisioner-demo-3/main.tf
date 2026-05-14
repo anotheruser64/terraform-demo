@@ -99,7 +99,7 @@ resource "aws_instance" "ec2-creation" {
     "sudo apt update -y",
     "sudo apt install python3-pip -y",
     "cd /home/ubuntu",
-    "sudo pip3 install flask",
+    "sudo pip3 install flask --break-system-packages",
     "sudo python3 app.py",
   ]
 }
