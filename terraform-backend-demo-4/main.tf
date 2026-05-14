@@ -5,5 +5,5 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "aws_s3_creation" {
-  bucket = "aws-anotheruser-my-terraform-state-bucket"
+  bucket = "aws-anotheruser-my-terraform-state-bucket-2026"
 }
